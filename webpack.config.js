@@ -5,7 +5,7 @@ var webpack = require('webpack'),
 module.exports = {
 	entry: './src/index.js',
 	plugins: [
-        new ExtractTextPlugin("styles.css")
+        new ExtractTextPlugin("style.css")
     ],
 	output: {
 		path: __dirname + '/dist',
