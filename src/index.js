@@ -1,27 +1,22 @@
-import Immutable from 'immutable';
+import './less/main.less';
+import _ from 'underscore';
 
-let pregunta = new Immutable.Record({
-    idPregunta: 0,
-    texto: undefined
-});
+import React from 'react';
+import { render } from 'react-dom';
+//import configureStore from './store/configureStore';
+//import {Provider} from 'react-redux';
+//import {initConsulta} from './actions/consultaMedicaActions';
+//import { Router, hashHistory } from 'react-router';
+//import routes from './routes';
+/*
+const store = configureStore();
 
-let pregunta1 = new pregunta();
+window._ = _;
 
-
-pregunta1 = pregunta1.set('texto', 'Quien?');
-
-
-alert(pregunta1.get('texto'));
-
-let map = new Immutable.Map();
-
-map = map.set('vaca', {a:'b', c:'d'});
-
-alert(map.get('vaca').a);
-
-
-let lista = new Immutable.List();
-
-lista.push({a:'b', c:'d'});
-
-alert(lista.size);
+render(
+	<Provider store={store}>
+		<Router history={hashHistory} routes={routes} />
+	</Provider>,
+	document.getElementById('app')
+);
+*/
