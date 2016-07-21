@@ -1,7 +1,7 @@
 import Immutable from 'immutable';
 
-let initialState = new Immutable.Map(); 
+let initialState = new Immutable.Map();
 
-initialState = initialState.set('questionList', new Immutable.List());
+initialState = initialState.set('questionModule', new Immutable.Map().set('questionList', new Immutable.List()));
 
 export default initialState;
