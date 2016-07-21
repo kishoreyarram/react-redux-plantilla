@@ -1,11 +1,10 @@
 import initialState from './initialState';
-import Immutable from 'immutable';
+//import Immutable from 'immutable';
 import {Question} from './stateDescriptor';
 
 const LOAD_QUESTION_LIST = 'LOAD_QUESTION_LIST';
 
 export default function reducer(state = initialState.get('questionModule'), action) {
-	debugger;
 	switch (action.type) {
 	case LOAD_QUESTION_LIST: {
 		let questionList = state.get('questionList');

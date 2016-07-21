@@ -9,15 +9,15 @@ import {loadQuestions} from './modules/questionModule';
 //import {initConsulta} from './actions/consultaMedicaActions';
 //import { Router, hashHistory } from 'react-router';
 //import routes from './routes';
+window._ = _;
 
 const store = configureStore();
 
 store.dispatch(loadQuestions());
 
-let alt = store.getState();
-debugger;
 
-//window._ = _;
+
+
 /*
 render(
 	<Provider store={store}>
