@@ -16,8 +16,6 @@ const store = configureStore();
 store.dispatch(loadQuestions());
 
 
-
-
 /*
 render(
 	<Provider store={store}>
