@@ -31,7 +31,7 @@ module.exports = {
 				exclude: /node_modules/, 
  				loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader?root=.")
             }, {
-				test: /\.(png|jpg|jpeg|gif|woff|woff2|svg|ttf)$/, 
+				test: /\.(eot|png|jpg|jpeg|gif|woff|woff2|svg|ttf)$/, 
                 exclude: /node_modules/,
                 loader: 'url-loader?limit=10000'
 			}

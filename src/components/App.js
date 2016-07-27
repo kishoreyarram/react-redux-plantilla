@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
+import {Jumbotron, Button} from 'react-bootstrap';
 import {addQuestion} from '../modules/questionModule';
 
 class App extends React.Component {
@@ -18,7 +19,13 @@ class App extends React.Component {
 			<div>
 				<div className="wrapGeneral">
 					{'pregunta: ' + this.props.questionList.get(0).get('text')}
-					<button onClick={this.addQuestion}>{'Hola'}</button>
+					<Button bsStyle="warning" onClick={this.addQuestion}>{'Hola'}</Button>
+
+					<Jumbotron>
+						<h1>Hello, world!</h1>
+						<p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+						<p><Button bsStyle="primary">Learn more</Button></p>
+					</Jumbotron>
 				</div>
 			</div>
 		);
