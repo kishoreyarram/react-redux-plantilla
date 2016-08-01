@@ -1,4 +1,4 @@
-import './less/main.less';
+import '../less/main.less';
 import _ from 'underscore';
 
 import React from 'react';
