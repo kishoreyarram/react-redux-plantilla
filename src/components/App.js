@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {Jumbotron, Button} from 'react-bootstrap';
+import {Navbar, Nav, NavItem, Jumbotron, Button} from 'react-bootstrap';
 import {addQuestion} from '../modules/questionModule';
 
 class App extends React.Component {
@@ -17,7 +17,17 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				{this.props.children}
+				<Navbar inverse>
+					<Navbar.Header>
+						<Navbar.Brand>
+						<a href="#">React-Bootstrap</a>
+						</Navbar.Brand>
+					<Navbar.Toggle />
+					</Navbar.Header>
+				</Navbar>
+				<div className="container-fluid">
+					{this.props.children}
+				</div>
 			</div>
 		);
 	}

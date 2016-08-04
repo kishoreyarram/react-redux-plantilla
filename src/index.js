@@ -29,3 +29,13 @@ render(
 	</Provider>,
 	document.getElementById('app')
 );
+
+
+/*
+
+-  Answer debe ser tipo Record de immutable
+-  Cuando le den click a agregar respuesta, debe solicitar el texto de la respuesta
+-  Permitir que cambie el valor del radio
+-  Id debe ser dinámico
+
+*/
