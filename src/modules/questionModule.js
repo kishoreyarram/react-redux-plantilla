@@ -1,8 +1,10 @@
 import initialState from './initialState';
-//import Immutable from 'immutable';
+import Immutable from 'immutable';
 import {Question} from './stateDescriptor';
+import questionApi from '../api/questions';
 
 const LOAD_QUESTION_LIST = 'LOAD_QUESTION_LIST';
+const SAVE_QUESTION_SUCCESS = 'SAVE_QUESTION_SUCCESS';
 const ADD_QUESTION = 'ADD_QUESTION';
 
 export default function reducer(state = initialState.get('questionModule'), action) {
@@ -44,3 +46,14 @@ export function addQuestion() {
 		]
 	};
 }
+
+export const saveQuestion = (question) => {
+	return (dispatch) => {
+		return questionApi.saveQuestion(question).then(response => {
+			dispatch({type: SAVE_QUESTION_SUCCESS, result: response.data});
+		}).catch(error => {
+			dispatch(ajaxCallError(error));
+			throw (error);
+		});
+	};
+};
