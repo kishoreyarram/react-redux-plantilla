@@ -2,19 +2,16 @@ import '../less/main.less';
 import _ from 'underscore';
 
 import React from 'react';
-import axios from 'axios';
 import { render } from 'react-dom';
 import configureStore from './store';
-import {loadQuestions, saveQuestion} from './modules/questionModule';
 import {Provider} from 'react-redux';
-//import {initConsulta} from './actions/consultaMedicaActions';
 import { Router, hashHistory } from 'react-router';
 import routes from './routes';
 
 window._ = _;
 
 const store = configureStore();
-
+/*
 store.dispatch(loadQuestions());
 
 store.dispatch(saveQuestion(
@@ -23,8 +20,8 @@ store.dispatch(saveQuestion(
     "correctAnswer": 1
 }
 ));
+*/
 
-/*
 
 render(
 	<Provider store={store}>
@@ -32,4 +29,3 @@ render(
 	</Provider>,
 	document.getElementById('app')
 );
-*/
