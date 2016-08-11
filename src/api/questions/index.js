@@ -1,6 +1,6 @@
 import {post} from 'axios';
 
-let path = 'http://10.3.2.48:1337/parse/classes/question',
+let path = 'http://localhost:1337/parse/classes/question',
 	conf = {
 		headers: {
 			'X-Parse-Application-Id': 'app',

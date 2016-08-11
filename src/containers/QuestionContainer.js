@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {saveQuestion} from '../modules/questionModule';
-import QuestionForm from '../components/question/QuestionForm-temp';
+import QuestionForm from '../components/question/QuestionForm';
 
 class QuestionContainer extends React.Component {
 	
@@ -14,19 +14,20 @@ class QuestionContainer extends React.Component {
 		this.saveQuestion = this.saveQuestion.bind(this);
 	}
 
-	saveQuestion(event) {
-		event.preventDefault();
-		let contentPregunta  = { "questionText":"Why Gerard 3?",
-				"answers": [{"id": 1, "text": "Just Because"}, {"id": 1, "text":"Why not"}],
-				"correctAnswer": 1
-			};
-		this.props.saveQuestion(contentPregunta);
+	saveQuestion(question) {
+		
+		this.props.saveQuestion(question);
 	}
 
 	
 	render() {
+		let components = this.props.children && React.cloneElement(this.props.children, {
+			saveQuestion: this.saveQuestion
+		});
 		return (
-			<QuestionForm saveQuestion={this.saveQuestion} />
+			<div>
+				{components}
+			</div>
 		);
 	}
 }
