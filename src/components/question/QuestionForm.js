@@ -14,7 +14,7 @@ class QuestionForm extends React.Component {
 			questionText: '',
 			showAnswerCapture: false,
 			selectedAnswer: 0
-		}
+		};
 		
 		this.addAnswer = this.addAnswer.bind(this);
 		this.changeTextQuestion = this.changeTextQuestion.bind(this);
@@ -28,23 +28,23 @@ class QuestionForm extends React.Component {
 	changeTextQuestion(event) {
 		this.setState({
 			questionText: event.target.value
-		})
+		});
 	}
 	
 	changeTextAnswer(event) {
 		this.setState({
 			answerText: event.target.value
-		})
+		});
 	}
 	
 	addAnswer(event) {
 		event.preventDefault();
 		this.setState({
 			showAnswerCapture: true
-		})
+		});
 	}
 	
-	saveAnswer(even) {
+	saveAnswer(event) {
 		event.preventDefault();
 		let newAnser = {},
 			answersList = this.state.answersList;
@@ -63,7 +63,7 @@ class QuestionForm extends React.Component {
 		event.preventDefault();
 		this.setState({
 			showAnswerCapture: false
-		})
+		});
 	}
 	
 	changeAnswer(event) {
@@ -88,14 +88,15 @@ class QuestionForm extends React.Component {
 			questionText: this.state.questionText,
 			correctAnswer: this.state.selectedAnswer,
 			answers
-		}
+		};
 		
 		this.props.saveQuestion(contentPregunta);
+		
+		document.location = '#/question';
 	}
 	
 	render() {
 		let showAnswers = this.state.answersList.toArray().map(((element, index) => {
-			console.log(this.state.selectedAnswer)
 			return (
 				<div key={index}>
 					<Answer id={index}
@@ -105,7 +106,7 @@ class QuestionForm extends React.Component {
 						group={element.nameGroup}
 						/>
 				</div>
-			)
+			);
 		}).bind(this));
 		return (
 			<form onSubmit={this.saveQuestion}>
@@ -150,11 +151,7 @@ class QuestionForm extends React.Component {
 }
 
 QuestionForm.propTypes = {
-	
-};
-
-QuestionForm.defaultProps = {
-	
+	saveQuestion: PropTypes.func
 };
 
 export default QuestionForm;

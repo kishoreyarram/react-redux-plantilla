@@ -1,32 +1,28 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import Header from './comun/Header';
-import Footer from './comun/Footer';
 
 class App extends React.Component {
-    constructor(props, context){
-        super(props, context);
-        this.toggleMenu=this.toggleMenu.bind(this);
-        this.state={
-            isOpened:false
-        };
-        
-    }
+
+	constructor(props, context) {
+		super(props, context);
+		this.toggleMenu=this.toggleMenu.bind(this);
+		this.state = {
+			isOpened: false
+		};
+	}
     
-    toggleMenu(event) {
-        event.preventDefault();
-        this.setState({isOpened:!this.state.isOpened});
-    }
+	toggleMenu(event) {
+		event.preventDefault();
+		this.setState({isOpened: !this.state.isOpened});
+	}
     
 	render() {
 		let components = this.props.children;
 		return (
 			<div>
-				<Header />
 				<div className="wrapGeneral">
 					{components}
 				</div>
-				<Footer/>
 			</div>
 		);
 	}

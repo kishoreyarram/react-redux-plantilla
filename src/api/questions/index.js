@@ -1,4 +1,4 @@
-import {post} from 'axios';
+import {post, get} from 'axios';
 
 let path = 'http://localhost:1337/parse/classes/question',
 	conf = {
@@ -9,10 +9,14 @@ let path = 'http://localhost:1337/parse/classes/question',
 	};
 
 class QuestionApi {
+	
+	static getAll() {
+		return get(path, conf);
+	}
 
 	static saveQuestion(question) {
 		return post(path, question, conf);
 	}
-};
+}
 
 export default QuestionApi;

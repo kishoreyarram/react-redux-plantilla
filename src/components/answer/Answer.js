@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React, {PropTypes} from 'react';
 import {Radio} from 'react-bootstrap';
 
 const Answer = ({id, answerText, checked, group, changeFunction}) => {
@@ -11,9 +11,8 @@ const Answer = ({id, answerText, checked, group, changeFunction}) => {
 	);
 };
 
-Answer.displayName = 'Answer';
-
 Answer.propTypes = {
+	id: PropTypes.number.isRequired,
 	answerText: PropTypes.string.isRequired,
 	group: PropTypes.string.isRequired,
 	changeFunction: PropTypes.func.isRequired,
@@ -25,4 +24,3 @@ Answer.defaultProps = {
 };
 
 export default Answer;
-

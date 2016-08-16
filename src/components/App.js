@@ -1,17 +1,17 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {Navbar, Nav, NavItem, Jumbotron, Button} from 'react-bootstrap';
-import {addQuestion} from '../modules/questionModule';
+import {Navbar, Nav, NavItem} from 'react-bootstrap';
+import {loadQuestions} from '../modules/questionModule';
+import Dots from './common/Dots';
 
 class App extends React.Component {
-    constructor(props, context){
-        super(props, context);   
 
-		this.addQuestion = this.addQuestion.bind(this);
-    }
+	constructor(props, context) {
+		super(props, context);   
+	}
 
-	addQuestion() {
-		this.props.addQuestion();
+	componentDidMount() {
+		this.props.loadQuestions();
 	}
     
 	render() {
@@ -20,12 +20,23 @@ class App extends React.Component {
 				<Navbar inverse>
 					<Navbar.Header>
 						<Navbar.Brand>
-						<a href="#">React-Bootstrap</a>
+						<a href="#/question">
+							{'React-Bootstrap'}
+						</a>
 						</Navbar.Brand>
-					<Navbar.Toggle />
 					</Navbar.Header>
+					<Navbar.Collapse>
+						<Nav>
+							<NavItem eventKey={1} href="#/question/new">
+								{'New Question'}
+							</NavItem>
+						</Nav>
+					</Navbar.Collapse>
 				</Navbar>
 				<div className="container-fluid">
+					{this.props.loading === true && (
+						<Dots />
+					)}
 					{this.props.children}
 				</div>
 			</div>
@@ -34,21 +45,23 @@ class App extends React.Component {
 }
 
 App.propTypes = {
+	children: PropTypes.object,
+	loading: PropTypes.bool,
 	questionList: PropTypes.object,
-	addQuestion: PropTypes.func
+	loadQuestions: PropTypes.func
 };
 
 function mapStateToProps(state) {
 	return {
+		loading: state.ajaxModule > 0,
 		questionList: state.questionModule.get('questionList')
 	};
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
-		addQuestion: () => dispatch(addQuestion())
+		loadQuestions: () => dispatch(loadQuestions())
 	};
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

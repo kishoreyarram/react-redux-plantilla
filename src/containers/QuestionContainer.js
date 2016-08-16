@@ -1,28 +1,24 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {saveQuestion} from '../modules/questionModule';
-import QuestionForm from '../components/question/QuestionForm';
 
 class QuestionContainer extends React.Component {
 	
 	constructor(props, context) {
 		super(props, context);
-		this.state = {
-			campo1: {value: '', validation: 'initial'}
-		};
 		
 		this.saveQuestion = this.saveQuestion.bind(this);
 	}
 
 	saveQuestion(question) {
-		
 		this.props.saveQuestion(question);
 	}
 
 	
 	render() {
 		let components = this.props.children && React.cloneElement(this.props.children, {
-			saveQuestion: this.saveQuestion
+			saveQuestion: this.saveQuestion,
+			questionsList: this.props.questionsList.toArray()
 		});
 		return (
 			<div>
@@ -33,22 +29,20 @@ class QuestionContainer extends React.Component {
 }
 
 QuestionContainer.propTypes = {
-	
-};
-
-QuestionContainer.defaultProps = {
-	
+	children: PropTypes.object,
+	saveQuestion: PropTypes.func,
+	questionsList: PropTypes.object	
 };
 
 function mapStateToProps(state) {
 	return {
-		
+		questionsList: state.questionModule.get('questionsList')
 	};
 }
 
 function mapDispatchToProps(dispatch) {
 	return {
-		saveQuestion: (question) => {dispatch(saveQuestion(question))}
+		saveQuestion: (question) => dispatch(saveQuestion(question))
 	};
 }
 
