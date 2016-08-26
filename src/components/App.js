@@ -30,6 +30,10 @@ class App extends React.Component {
 							<NavItem eventKey={1} href="#/question/new">
 								{'New Question'}
 							</NavItem>
+							<NavItem eventKey={2} href="#/candidate/new">
+								{'New Candidate'}
+							</NavItem> 
+							
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
