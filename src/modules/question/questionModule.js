@@ -9,7 +9,7 @@ export const LOAD_QUESTION_LIST_SUCCESS = 'LOAD_QUESTION_LIST_SUCCESS';
 export const SAVE_QUESTION_SUCCESS = 'SAVE_QUESTION_SUCCESS';
 export const ADD_QUESTION = 'ADD_QUESTION';
 
-export function reducer(state = initialState.get('questionModule'), action) {
+export default function reducer(state = initialState.get('questionModule'), action) {
 	switch (action.type) {
 	case LOAD_QUESTION_LIST_SUCCESS: {
 		return state.set('questionsList', action.questionsList);

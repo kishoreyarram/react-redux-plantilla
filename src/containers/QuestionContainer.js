@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {saveQuestion} from '../modules/questionModule';
+import {saveQuestion} from '../modules/question/questionModule';
 
 class QuestionContainer extends React.Component {
 	

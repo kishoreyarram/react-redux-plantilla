@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
-import {saveCandidate} from '../modules/candidateModule';
+import {saveCandidate} from '../modules/candidate/candidateModule';
 
 class CandidateContainer extends React.Component {
 

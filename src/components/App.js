@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react';
 import {connect} from 'react-redux';
 import {Navbar, Nav, NavItem} from 'react-bootstrap';
-import {loadQuestions} from '../modules/questionModule';
+import {loadQuestions} from '../modules/question/questionModule';
 import Dots from './common/Dots';
 
 class App extends React.Component {
