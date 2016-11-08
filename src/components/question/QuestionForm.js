@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Col, InputGroup, Button, Row} from 'react-bootst
 import Answer from '../answer/Answer';
 import AnswerCapture from '../answer/AnswerCapture';
 import Immutable from 'immutable';
+import _ from 'lodash';
 
 class QuestionForm extends React.Component {
 	

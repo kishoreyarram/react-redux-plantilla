@@ -1,8 +1,9 @@
-import initialState from './initialState';
+import initialState from '../initialState';
 import Immutable from 'immutable';
 import {Candidate} from './stateDescriptor';
-import candidateApi from '../api/candidates';
-import {beginAjaxCall, ajaxCallError} from './ajaxModule';
+import candidateApi from '../../api/candidates';
+import {beginAjaxCall, ajaxCallError} from '../ajax/ajaxModule';
+import _ from 'lodash';
 
 const LOAD_CANDIDATE_LIST_SUCCESS = 'LOAD_CANDIDATE_LIST_SUCCESS';
 const SAVE_CANDIDATE_SUCCESS = 'SAVE_CANDIDATE_SUCCESS'; 

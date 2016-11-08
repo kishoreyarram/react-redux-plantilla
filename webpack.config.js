@@ -1,3 +1,6 @@
+/* eslint no-var: 0 */
+/* eslint no-unused-vars: 0 */
+
 var webpack = require('webpack'),
 	path = require('path'),
 	ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -5,37 +8,39 @@ var webpack = require('webpack'),
 module.exports = {
 	entry: './src/index.js',
 	plugins: [
-        new ExtractTextPlugin("style.css")
-    ],
+		new ExtractTextPlugin('style.css')
+	],
 	output: {
 		path: __dirname + '/dist',
 		publicPath: '/',
-		filename: "bundle.js"
+		filename: 'bundle.js'
 	},
 	devServer: {
 		inline: true,
 		port: 3333,
-        contentBase: 'public'
-    },
+		contentBase: 'public'
+	},
 	module: {
 		loaders: [
-  			{
+			{
 				test: /\.js$/, 
 				exclude: /node_modules/,
-				loader: ['babel'],
+				loader: ['babel-loader'],
 				query: {
 					presets: ['es2015', 'react']
 				}
-			}, {
+			}, 
+			{
 				test: /\.less$/, 
 				exclude: /node_modules/, 
- 				loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader?root=.")
-            }, {
+				loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader?root=.')
+			}, 
+			{
 				test: /\.(eot|png|jpg|jpeg|gif|woff|woff2|svg|ttf)$/, 
-                exclude: /node_modules/,
-                loader: 'url-loader?limit=10000'
+				exclude: /node_modules/,
+				loader: 'url-loader?limit=10000'
 			}
-    	]	
+		]	
 	},
-	watch: true,
-}
+	watch: true
+};
