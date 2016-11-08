@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
-import ajaxModule from './ajaxModule';
-import questionModule from './questionModule';
-import candidateModule from './candidateModule';
+import ajaxModule from './ajax/ajaxModule';
+import questionModule from './question/questionModule';
+import candidateModule from './candidate/candidateModule';
 
 const rootReducer = combineReducers({
 	ajaxModule, 

@@ -7,6 +7,6 @@ let initialState = new Immutable.Map()
 .set('candidateModule',
 	new Immutable.Map().set('candidatesList', new Immutable.List())
 )
-.set('ajaxModule', 0);
+.set('ajaxCalls', 0);
 
 export default initialState;

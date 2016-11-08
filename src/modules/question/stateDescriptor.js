@@ -12,11 +12,3 @@ export const Answer = new Immutable.Record({
 	id: undefined,
 	text: ''
 });
-
-export const Candidate = new Immutable.Record({
-	objectId: undefined, 
-	nombre: '',
-	apePaterno: '',
-	apeMaterno: '',
-	fechaNacimiento: '' 
-});
